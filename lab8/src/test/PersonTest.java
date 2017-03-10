@@ -1,8 +1,12 @@
 package test;
 
 import static org.junit.Assert.*;
+
+import java.util.Arrays;
+
 import main.Person;
 import main.Address;
+import main.Course;
 import org.junit.Test;
 
 public class PersonTest {
@@ -48,6 +52,35 @@ public class PersonTest {
 		}
 		person.setAddress(address);
 		assertTrue(person.getAddress().equals(address));
+	}
+	
+	@Test
+	public void testAddCourse()
+	{
+		Person person = new Person("Henri", "Cheung");
+		Course course = new Course("2001", "Assembly");
+		person.addCourse(course);
+		Course[] courses = person.getCourses();
+		assertTrue(Arrays.asList(courses).contains(course));
+	}
+	
+	@Test
+	public void testRemove()
+	{
+		Person person = new Person("Henri", "Cheung");
+		Course course = new Course("2001", "Assembly");
+		person.addCourse(course);
+		person.remove(course);
+		Course[] courses = person.getCourses();
+		assertFalse(Arrays.asList(courses).contains(course));
+	}
+	
+	@Test
+	public void testEquals()
+	{
+		Person person = new Person("Henri", "Cheung");
+		Person person2 = new Person("Henri", "Cheung");
+		assertTrue(person.equals(person2));
 	}
 	
 }
