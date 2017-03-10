@@ -39,6 +39,6 @@ public class Address
      
      public void setPostalCode(String newPostalCode){
     	 postalCode = newPostalCode;
-     }
+     } 
  
 } 
