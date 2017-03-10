@@ -15,4 +15,14 @@ public class ProfessorTest {
 		String testOffice = prof.getOffice();
 		assertTrue(office.equals(testOffice));
 	}
+	
+	@Test
+	public void testGetOffice()
+	{
+		String office = "ME 3380";
+		Professor prof = new Professor("Henri", "Cheung");
+		prof.setOffice(office);
+		String testOffice = prof.getOffice();
+		assertTrue(office.equals(testOffice));
+	}
 }

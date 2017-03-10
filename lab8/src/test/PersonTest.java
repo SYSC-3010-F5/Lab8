@@ -41,6 +41,20 @@ public class PersonTest {
 	}
 	
 	@Test
+	public void testGetAddress()
+	{
+		Person person = new Person("Henri", "Cheung");
+		Address address = null;
+		try {
+			address = new Address("James Long Court", "Nepean", "K2J4R1");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		person.setAddress(address);
+		assertTrue(person.getAddress().equals(address));
+	}
+	
+	@Test
 	public void testSetAddress()
 	{
 		Person person = new Person("Henri", "Cheung");
@@ -52,6 +66,15 @@ public class PersonTest {
 		}
 		person.setAddress(address);
 		assertTrue(person.getAddress().equals(address));
+	}
+	@Test
+	public void testGetCourse()
+	{
+		Person person = new Person("Henri", "Cheung");
+		Course course = new Course("2001", "Assembly");
+		person.addCourse(course);
+		Course[] courses = person.getCourses();
+		assertTrue(Arrays.asList(courses).contains(course));
 	}
 	
 	@Test
@@ -83,4 +106,11 @@ public class PersonTest {
 		assertTrue(person.equals(person2));
 	}
 	
+	@Test
+	public void testToString()
+	{
+		Person person = new Person("Henri", "Cheung");
+		String string = "Henri Cheung";
+		assertTrue(person.toString().equals(string));
+	}
 }
