@@ -64,7 +64,7 @@ public class addressTest {
 		}
 	}
 	
-	@Test
+	@Test 
 	public void testSetPostalCode(){
 		try {
 			Address address = new Address("Bank","Ottawa","K1S2R2");

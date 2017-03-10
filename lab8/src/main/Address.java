@@ -36,7 +36,7 @@ public class Address
      public void setCity(String newCity){
     	 city = newCity;
      }
-     
+      
      public void setPostalCode(String newPostalCode){
     	 postalCode = newPostalCode;
      } 
