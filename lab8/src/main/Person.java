@@ -33,25 +33,37 @@ public class Person
    {
 	   address=addr;
    };
-   public Address getAddress() { return address; };
+   public Address getAddress() { 
+	   return address; 
+   };
 
    public Course[] getCourses() {   
 	   return (Course[]) courses.toArray(); 
    }
    public void addCourse( Course course ) {
+	   if(courses == null)
+		   courses = new ArrayList<Course>();
 	   courses.add(course);
    };
    public void remove(Course course) {
+	   if(courses == null)
+		   return;
 	   courses.remove(course);
    };
 
     public String toString() { 
     	String returnString = "";
-    	returnString = name.toString() + " " + address.toString();
+    	returnString = name.toString();
     	
-    	for(int i = 0; i < courses.size(); i++)
+    	if(address != null)
+    		returnString += " " + address.toString();
+    	
+    	if(courses != null)
     	{
-    		returnString = returnString + " " + courses.get(i).toString();
+    		for(int i = 0; i < courses.size(); i++)
+    		{
+    			returnString = returnString + " " + courses.get(i).toString();
+    		}
     	}
     	
     	return returnString; 
