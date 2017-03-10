@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 public class Person
 {
    private Name name;
@@ -12,12 +13,17 @@ public class Person
    };
    
    public void setLastName( String name) {
-	   
+	   String first = name.toString().split(" ")[0];
+	   this.name = new Name(first, name);
    };
    
-   public String getLastName() { return null; };
+   public String getLastName() { 
+	   return name.toString().split(" ")[1]; 
+   };
    
-   public String getFirstName() { return null; };
+   public String getFirstName() { 
+	   return name.toString().split(" ")[0];
+   };
    
    public String getFullName() { 
 	   return name.toString(); 
@@ -30,9 +36,14 @@ public class Person
    public Address getAddress() { return address; };
 
    public Course[] getCourses() {   
-	   return null; }
-   public void addCourse( Course course ) {};
-   public void remove(Course course) {};
+	   return (Course[]) courses.toArray(); 
+   }
+   public void addCourse( Course course ) {
+	   courses.add(course);
+   };
+   public void remove(Course course) {
+	   courses.remove(course);
+   };
 
     public String toString() { 
     	String returnString = "";
