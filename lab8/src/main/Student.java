@@ -7,9 +7,11 @@ public class Student extends Person
    
    public Student(String first, String last) {
 	   super(first, last);
+	   number = nextFreeNumber;
+	   nextFreeNumber++;
    };
 
-   public int getNumber() { return -1; }
+   public int getNumber() { return number; }
 
    // You decide if you need toString() and equals()
 }
