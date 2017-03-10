@@ -10,6 +10,7 @@ public class Person
    
    public Person( String first, String last) {
 	   name = new Name(first, last);
+	   courses = new ArrayList<Course>();
    };
    
    public void setLastName( String name) {
@@ -38,16 +39,12 @@ public class Person
    };
 
    public Course[] getCourses() {   
-	   return (Course[]) courses.toArray(); 
+	   return courses.toArray(new Course[0]);
    }
    public void addCourse( Course course ) {
-	   if(courses == null)
-		   courses = new ArrayList<Course>();
 	   courses.add(course);
    };
    public void remove(Course course) {
-	   if(courses == null)
-		   return;
 	   courses.remove(course);
    };
 
@@ -68,7 +65,51 @@ public class Person
     	
     	return returnString; 
     }
-    public boolean equals(Object o) { 
+    public boolean equals(Object o) 
+    {
+    	if(o instanceof Person)
+    	{
+    		Person person = (Person)o;
+    		
+    		//check name
+    		if (!person.name.equals(this.name))
+    		{
+    			return false;
+    		}
+    		
+    		//check address
+    		if (this.address == null || person.address == null)
+    		{
+    			if (this.address != person.address)
+    			{
+    				return false;
+    			}
+    		}
+    		else
+    		{
+    			if (!(this.address.equals(person.address)))
+    			{
+    				return false;
+    			}
+    		}
+    		
+    		//check courses
+    		if (!this.courses.equals(person.courses))
+    		{
+    			return false;
+    		}
+    		
+    		//we good
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    	
+    	
+    	
+    	/*
     	if(!(o instanceof Person))
     		return false; 
     	else
@@ -76,7 +117,7 @@ public class Person
     		Person person = (Person) o;
     		if(this.name.equals(person.name))
     		{
-    			if(this.address == null && this.courses == null)
+    			if(this.address == null || this.courses == null)
     			{
     				if(person.address != null || person.courses != null)
     				{
@@ -94,6 +135,7 @@ public class Person
     		}
     	}
     	return false;
+    	*/
     }
 
 }     

@@ -9,18 +9,28 @@ import junit.framework.Assert;
 
 public class NameTest {
 
-	public void testtoString(String sendName)
+	@Test
+	public void testtoString()
 	{
-		Name jeff=new Name("J","Smith");
+		Name jeff=new Name("J","Smith"); 
 		String testname=jeff.toString();
-		assertTrue(testname.equals(sendName));
+		assertTrue(testname.equals("J Smith"));
 	}
 	
-	public void testequals()
+	@Test
+	public void testequals1()
 	{
 		Name jeff2=new Name("J","Smith2");
 		Object objc=new Object();
-		assertTrue(objc.equals(jeff2.equals(objc)));
+		assertFalse(objc.equals(jeff2.equals(objc)));
+	}
+	@Test
+	public void testequals2()
+	{
+		Name name = new Name("Yeah Boi","Natey");
+		Name name2 = new Name("Yeah Boi","Natey");
+		assertTrue(name.equals(name2));
+		
 	}
 
 }

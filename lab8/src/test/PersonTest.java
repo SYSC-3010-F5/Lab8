@@ -67,14 +67,17 @@ public class PersonTest {
 		person.setAddress(address);
 		assertTrue(person.getAddress().equals(address));
 	}
+	
 	@Test
-	public void testGetCourse()
+	public void testGetCourses()
 	{
 		Person person = new Person("Henri", "Cheung");
-		Course course = new Course("2001", "Assembly");
-		person.addCourse(course);
-		Course[] courses = person.getCourses();
-		assertTrue(Arrays.asList(courses).contains(course));
+		Course[] courses = new Course[]{new Course("2001", "Assembly")};
+		for(Course curr : courses)
+		{
+			person.addCourse(curr);
+		}
+		assertTrue(courses.equals(person.getCourses()));
 	}
 	
 	@Test
