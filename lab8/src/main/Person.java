@@ -23,10 +23,14 @@ public class Person
 	   return name.toString(); 
    };
 
-   public void setAddress(Address address) {};
-   public Address getAddress() { return null; };
+   public void setAddress(Address addr) 
+   {
+	   address=addr;
+   };
+   public Address getAddress() { return address; };
 
-   public Course[] getCourses() { return null; }
+   public Course[] getCourses() { 
+	   return null; }
    public void addCourse( Course course ) {};
    public void remove(Course course) {};
 
