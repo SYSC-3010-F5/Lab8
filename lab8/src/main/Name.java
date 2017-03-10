@@ -9,5 +9,5 @@ public class Name
 	return name;
    }
    public boolean equals(Object o) { 
-	   return toString().equals(o); }
+	   return toString().equals(o); }  
 }
