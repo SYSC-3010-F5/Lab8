@@ -29,7 +29,7 @@ public class Person
    };
    public Address getAddress() { return address; };
 
-   public Course[] getCourses() { 
+   public Course[] getCourses() {   
 	   return null; }
    public void addCourse( Course course ) {};
    public void remove(Course course) {};
