@@ -9,11 +9,6 @@ import junit.framework.Assert;
 
 public class NameTest {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
 	public void testtoString(String sendName)
 	{
 		Name jeff=new Name("J","Smith");
