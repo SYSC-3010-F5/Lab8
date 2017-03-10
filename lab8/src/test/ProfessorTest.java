@@ -13,6 +13,6 @@ public class ProfessorTest {
 		Professor prof = new Professor("Henri", "Cheung");
 		prof.setOffice(office);
 		String testOffice = prof.getOffice();
-		assert(office.equals(testOffice));
+		assertTrue(office.equals(testOffice));
 	}
 }

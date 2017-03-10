@@ -13,7 +13,7 @@ public class StudentTest {
 		Student testStudent = new Student("Henri", "Cheung");
 		int num = testStudent.getNumber();
 		
-		assert(num != 0);
+		assertTrue(num != 0);
 	}
 
 	
