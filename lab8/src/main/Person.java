@@ -61,8 +61,25 @@ public class Person
     		return false; 
     	else
     	{
-    		if(this.toString().equals(o.toString()))
-    			return true;
+    		Person person = (Person) o;
+    		if(this.name.equals(person.name))
+    		{
+    			if(this.address == null && this.courses == null)
+    			{
+    				if(person.address != null || person.courses != null)
+    				{
+    					return false;
+    				}
+    				else
+    				{
+    					return true;
+    				}
+    			}
+    			if(this.address.equals(person.address) && this.courses.equals(person.courses))
+    			{
+    				return true;
+    			}
+    		}
     	}
     	return false;
     }
