@@ -26,7 +26,7 @@ public class Address
      }
      
      public String getPostalCode(){
-    	 return postalCode;
+    	 return postalCode; 
      }
      
      public void setStreet(String newStreet){
