@@ -49,11 +49,11 @@ public class Course
     	
     	if(name != null)
     	{
-    		s += name + ", prof.";
+    		s += name + ", prof. ";
     	}
     	else
     	{
-    		s += "<null>, prof.";
+    		s += "<null>, prof. ";
     	}
     	
     	if(professor != null)
@@ -81,7 +81,7 @@ public class Course
     		if(course.getName() == null || this.name == null)
     		{
     			if (course.getName() != this.name)
-    				course.getName(); 
+    				return false; 
     		}
     		else
     		{
