@@ -16,5 +16,29 @@ public class Address
      public boolean equals(Object o) { return false; }
      
      private boolean isValidPostalCode( String postalCode ) { return false; }
+     
+     public String getStreet(){
+    	 return street;
+     }
+     
+     public String getCity(){
+    	 return city;
+     }
+     
+     public String getPostalCode(){
+    	 return postalCode; 
+     }
+     
+     public void setStreet(String newStreet){
+    	 street = newStreet;
+     }
+     
+     public void setCity(String newCity){
+    	 city = newCity;
+     }
+      
+     public void setPostalCode(String newPostalCode){
+    	 postalCode = newPostalCode;
+     } 
  
 } 

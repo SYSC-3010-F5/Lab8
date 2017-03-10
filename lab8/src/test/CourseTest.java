@@ -56,9 +56,14 @@ public class CourseTest extends TestCase
 	
 	
 	//test toString representation
-	public void testToString()
+	public void testToString1()
 	{
-		//TODO
+		course.setProfessor(new Professor("James","Green"));
+		assertTrue((ID + " -- " + NAME + ", prof. " + "James Green").equals(course.toString()));
+	}
+	public void testToString2()
+	{
+		assertTrue((ID + " -- " + NAME + ", prof. " + "<null>").equals(course.toString()));
 	}
 	
 	
